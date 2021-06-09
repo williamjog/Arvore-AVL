@@ -253,11 +253,11 @@ public class ArvoreAvl {
     	}
 	} 	
     
-    public void print(String prefixo, Node node, boolean eNaEsquerda) { // Baseado em https://stackoverflow.com/questions/4965335/how-to-print-binary-tree-diagram
+    public void print(String prefixo, Node node, boolean naEsquerda) { // Baseado em https://stackoverflow.com/questions/4965335/how-to-print-binary-tree-diagram
         if (node != null) {
-            print(prefixo + "     ", node.getDireita(), false);
-            System.out.println (prefixo + ("|-- ") + node.getChave());
-            print(prefixo + "     ", node.getEsquerda(), true);
+          print(prefixo + "     ", node.getDireita(), false);
+          System.out.println (prefixo + ("|-- ") + node.getChave());
+          print(prefixo + "     ", node.getEsquerda(), true);
         }
     }
     
