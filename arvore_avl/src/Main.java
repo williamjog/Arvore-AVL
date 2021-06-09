@@ -25,7 +25,7 @@ public class Main {
 					System.out.println("\nDigite o número inteiro: ");
 					int numeroAAdicionar = Integer.parseInt(sc.nextLine());
 					arvore.inserir(numeroAAdicionar);
-					arvore.print("\n", arvore.getRaiz(), false);
+					arvore.print("", arvore.getRaiz(), false);
 					System.out.println("");
 					break;
 				
@@ -33,7 +33,7 @@ public class Main {
 					System.out.println("Digite o número inteiro: ");
 					int numeroARemover = Integer.parseInt(sc.nextLine());
 					arvore.remover(numeroARemover);
-					arvore.print("\n", arvore.getRaiz(), false);
+					arvore.print("", arvore.getRaiz(), false);
 					System.out.println("");
 					break;
 					
