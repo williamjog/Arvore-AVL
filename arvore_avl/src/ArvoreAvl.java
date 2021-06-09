@@ -239,9 +239,9 @@ public class ArvoreAvl {
 	
 	public void preOrdem(Node raiz) { // RED = raiz, esquerda, direita
 		if (raiz != null) {
-      System.out.print(raiz.getChave() + " ");
-      preOrdem(raiz.getEsquerda());
-      preOrdem(raiz.getDireita());
+		      System.out.print(raiz.getChave() + " ");
+		      preOrdem(raiz.getEsquerda());
+		      preOrdem(raiz.getDireita());
 		}
 	 }
 		  
@@ -250,8 +250,8 @@ public class ArvoreAvl {
     		posOrdem(raiz.getEsquerda());
     		posOrdem(raiz.getDireita());
 	      	System.out.print(raiz.getChave() + " ");
-    	}
-	} 	
+        }
+    } 	
     
     public void print(String prefixo, Node node, boolean naEsquerda) { // Baseado em https://stackoverflow.com/questions/4965335/how-to-print-binary-tree-diagram
         if (node != null) {
