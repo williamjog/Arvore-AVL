@@ -13,17 +13,16 @@ public class ArvoreAvl {
 		if (atual == null) {
 			return -1;
 		}
-
 		if (atual.getEsquerda() == null && atual.getDireita() == null) {
 			return 0;
-		
-		} else if (atual.getEsquerda() == null) {
+		} 
+    else if (atual.getEsquerda() == null) {
 			return 1 + altura(atual.getDireita());
-		
-		} else if (atual.getDireita() == null) {
+		} 
+    else if (atual.getDireita() == null) {
 			return 1 + altura(atual.getEsquerda());
-		
-		} else {
+		} 
+    else {
 			return 1 + Math.max(altura(atual.getEsquerda()), altura(atual.getDireita()));
 		}
 	}
@@ -111,8 +110,8 @@ public class ArvoreAvl {
 				return;
 			}
 			temporario = removido;
-
-		} else {
+		} 
+    else {
 			temporario = sucessor(removido);
 			removido.setChave(temporario.getChave());
 		}
@@ -145,7 +144,9 @@ public class ArvoreAvl {
 		direita.setPai(inicial.getPai());
 		inicial.setDireita(direita.getEsquerda());
 		
-		if (inicial.getDireita() != null) inicial.getDireita().setPai(inicial);
+		if (inicial.getDireita() != null) {
+      inicial.getDireita().setPai(inicial);
+    }
 	
 		direita.setEsquerda(inicial);
 		inicial.setPai(direita);
@@ -157,7 +158,6 @@ public class ArvoreAvl {
 				direita.getPai().setEsquerda(direita);
 			}
 		}
-		
 		setBalanceamento(inicial);
 		setBalanceamento(direita);
 
@@ -206,7 +206,8 @@ public class ArvoreAvl {
 				ladoEsquerdo = ladoEsquerdo.getEsquerda();
 			}
 			return ladoEsquerdo;
-		} else {
+		} 
+    else {
 			Node pai = antigo.getPai();
 			while (pai != null && antigo == pai.getDireita()) {
 				antigo = pai;
@@ -228,20 +229,17 @@ public class ArvoreAvl {
 
 	private void imprimirNaOrdem(Node no, ArrayList<Node> arvoreList) { //  ERD = esquerda, raiz, direita
 		if (no == null)	return;
-	
 		imprimirNaOrdem(no.getEsquerda(), arvoreList);
-		
 		arvoreList.add(no);
-		
 		imprimirNaOrdem(no.getDireita(), arvoreList);
 	}
 	
 	
 	public void preOrdem(Node raiz) { // RED = raiz, esquerda, direita
 		if (raiz != null) {
-		      System.out.print(raiz.getChave() + " ");
-		      preOrdem(raiz.getEsquerda());
-		      preOrdem(raiz.getDireita());
+      System.out.print(raiz.getChave() + " ");
+      preOrdem(raiz.getEsquerda());
+      preOrdem(raiz.getDireita());
 		}
 	 }
 		  
@@ -254,23 +252,23 @@ public class ArvoreAvl {
     } 	
     
     public void print(String prefixo, Node node, boolean naEsquerda) { // Baseado em https://stackoverflow.com/questions/4965335/how-to-print-binary-tree-diagram
-        if (node != null) {
-          print(prefixo + "     ", node.getDireita(), false);
-          System.out.println (prefixo + ("|-- ") + node.getChave());
-          print(prefixo + "     ", node.getEsquerda(), true);
-        }
+      if (node != null) {
+        print(prefixo + "     ", node.getDireita(), false);
+        System.out.println (prefixo + ("|-- ") + node.getChave());
+        print(prefixo + "     ", node.getEsquerda(), true);
+      }
     }
     
-    public Node procurarNumero(int procurado)  {  
-        Node atual = this.getRaiz();              
-        while (atual != null) {
-            if (atual.getChave() == procurado) {
-                break;
-            }
-            atual = atual.getChave() < procurado ? atual.getDireita() : atual.getEsquerda();
+    public Node procurarNumero(int procurado) {  
+      Node atual = this.getRaiz();              
+      while (atual != null) {
+        if (atual.getChave() == procurado) {
+          break;
         }
-        return atual;
-  } 
+        atual = atual.getChave() < procurado ? atual.getDireita() : atual.getEsquerda();
+      }
+      return atual;
+    } 
 }
 
    
