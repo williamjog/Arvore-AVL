@@ -15,14 +15,11 @@ public class ArvoreAvl {
 		}
 		if (atual.getEsquerda() == null && atual.getDireita() == null) {
 			return 0;
-		} 
-    else if (atual.getEsquerda() == null) {
+		} else if (atual.getEsquerda() == null) {
 			return 1 + altura(atual.getDireita());
-		} 
-    else if (atual.getDireita() == null) {
+		} else if (atual.getDireita() == null) {
 			return 1 + altura(atual.getEsquerda());
-		} 
-    else {
+		} else {
 			return 1 + Math.max(altura(atual.getEsquerda()), altura(atual.getDireita()));
 		}
 	}
@@ -110,8 +107,7 @@ public class ArvoreAvl {
 				return;
 			}
 			temporario = removido;
-		} 
-    else {
+		} else {
 			temporario = sucessor(removido);
 			removido.setChave(temporario.getChave());
 		}
@@ -145,8 +141,8 @@ public class ArvoreAvl {
 		inicial.setDireita(direita.getEsquerda());
 		
 		if (inicial.getDireita() != null) {
-      inicial.getDireita().setPai(inicial);
-    }
+     			inicial.getDireita().setPai(inicial);
+                }
 	
 		direita.setEsquerda(inicial);
 		inicial.setPai(direita);
@@ -206,8 +202,7 @@ public class ArvoreAvl {
 				ladoEsquerdo = ladoEsquerdo.getEsquerda();
 			}
 			return ladoEsquerdo;
-		} 
-    else {
+		} else {
 			Node pai = antigo.getPai();
 			while (pai != null && antigo == pai.getDireita()) {
 				antigo = pai;
@@ -237,9 +232,9 @@ public class ArvoreAvl {
 	
 	public void preOrdem(Node raiz) { // RED = raiz, esquerda, direita
 		if (raiz != null) {
-      System.out.print(raiz.getChave() + " ");
-      preOrdem(raiz.getEsquerda());
-      preOrdem(raiz.getDireita());
+		      System.out.print(raiz.getChave() + " ");
+		      preOrdem(raiz.getEsquerda());
+		      preOrdem(raiz.getDireita());
 		}
 	 }
 		  
